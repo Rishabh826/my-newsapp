@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+import Navbar from './components/Navbar';
+import Newscontainer from './components/Newscontainer';
+import LoadingBar from 'react-top-loading-bar'
+import {
+  BrowserRouter,
+
+  Route,
+  Routes,
+} from "react-router-dom";
+
+export default class App extends Component {
+  state ={
+    progress : 0
+  }
+   setprogress =(progress)=>{
+    this.setState({progress:progress})
+   }
+  render() {
+    return (
+      <div>
+         
+           <BrowserRouter> 
+           <Navbar/>
+         
+           <Routes>
+           <Route exact path="/" element={<Newscontainer  setprogress={this.setprogress} key="general" category ="general" />} />
+           <Route exact path="/sports" element={<Newscontainer setprogress={this.setprogress}  key="sports" category ="sports" />} />
+           <Route exact path="/entertainment" element={<Newscontainer setprogress={this.setprogress}   key="entertainment" category ="entertainment" />} />
+           <Route exact path="/technology" element={<Newscontainer  setprogress={this.setprogress}  key ="technology" category ="technology" />} />
+           </Routes>
+            </BrowserRouter>
+            <LoadingBar
+        color='#f11946'
+        height ={3}
+        shadow ={true}
+        progress={this.state.progress}
+      
+      />
+        
+      </div>
+      
+    )
+  }
 }
 
-export default App;
+
+
