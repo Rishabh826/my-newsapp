@@ -4,13 +4,17 @@ import './App.css';
 import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import Newscontainer from './components/Newscontainer';
+
 import LoadingBar from 'react-top-loading-bar'
 import {
-  BrowserRouter,
+ 
+
+  HashRouter,
 
   Route,
   Routes,
 } from "react-router-dom";
+import About from './components/About';
 
 export default class App extends Component {
   state ={
@@ -23,7 +27,7 @@ export default class App extends Component {
     return (
       <div>
          
-           <BrowserRouter> 
+           <HashRouter> 
            <Navbar/>
          
            <Routes>
@@ -31,8 +35,10 @@ export default class App extends Component {
            <Route exact path="/sports" element={<Newscontainer setprogress={this.setprogress}  key="sports" category ="sports" />} />
            <Route exact path="/entertainment" element={<Newscontainer setprogress={this.setprogress}   key="entertainment" category ="entertainment" />} />
            <Route exact path="/technology" element={<Newscontainer  setprogress={this.setprogress}  key ="technology" category ="technology" />} />
+           <Route exact path="/About" element={<About />} />
            </Routes>
-            </BrowserRouter>
+          
+            </HashRouter>
             <LoadingBar
         color='#f11946'
         height ={3}
