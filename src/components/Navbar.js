@@ -7,7 +7,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-success sticky-top"> 
+        <nav className="navbar navbar-expand-lg bg-black sticky-top"> 
           <div className="container-fluid">
             <div>
               <h1
