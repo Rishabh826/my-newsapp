@@ -59,7 +59,8 @@ export class Newscontainer extends Component {
   render() {
     return (
       <>
-        <h1 className="d-flex justify-content-center" style={{ background: 'linear-gradient(90deg, #020201, #1eb92a, #1bc5ae)', color: 'transparent', backgroundClip: 'text' }}>
+      <div style={{backgroundImage:'url(https://lh3.googleusercontent.com/RUg9YJuY2cPjh5znR5ZLqLJIBrm1CM2JuwCS1XP6g31ZDPa_NR--jR0JAum5qDbl2g5UKgBwM4SHSuyiWqjyd7VhBUI=s1280-w1280-h800)',backgroundAttachment:'fixed',backgroundSize:'cover',marginTop:'3.5rem'}}>
+        <h1 className="d-flex justify-content-center" style={{ color:'white' }}>
           Today's News - {this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1)} Headlines
         </h1>
         <InfiniteScroll
@@ -85,6 +86,7 @@ export class Newscontainer extends Component {
             </div>
           </div>
         </InfiniteScroll>
+        </div>
       </>
     )
   }

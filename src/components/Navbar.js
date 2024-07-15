@@ -7,7 +7,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-black sticky-top"> 
+        <nav className="navbar navbar-expand-lg bg-primary  fixed-top"> 
           <div className="container-fluid">
             <div>
               <h1
@@ -76,12 +76,7 @@ export class Navbar extends Component {
                 </li>
               </ul>
 
-              <button
-                type="button"
-                className="btn btn-secondary mx-4"
-                onClick={this.mode}
-                style={{ height: '40px', width: '40px' }}
-              ></button>
+             
               <form className="d-flex" role="search">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button className="btn btn-outline-success" type="submit">
